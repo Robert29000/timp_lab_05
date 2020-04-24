@@ -8,11 +8,7 @@ using::testing::AtLeast;
 
 class MockAccount: public Account{
 public:
-    MockAccount(int id, int balance){
-        this->id = id;
-        this->balance = balance;
-        this->is_locked_ = false;
-    }
+    MockAccount(int id, int balance):Account(int id, int balance){}
     MOCK_METHOD(int, GetBalance, (), (const, override));
     MOCK_METHOD(void, ChangeBalance, (int diff), (override));
     MOCK_METHOD(void, Lock, (), (override));
