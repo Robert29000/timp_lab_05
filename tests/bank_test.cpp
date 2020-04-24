@@ -58,5 +58,5 @@ TEST(Transaction, SaveToDataBase){
     MockAccount f_acc(0, 200);
     MockAccount t_acc(1, 300);
     MockTransaction tr;
-    EXPECT_CALL(tr, SaveToDataBase(f_acc, t_acc, 150)).Times(AtLeast(1));
+    EXPECT_CALL(tr, SaveToDataBase(f_acc, t_acc, 150)).Times(1);
 }
