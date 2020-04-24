@@ -1,7 +1,7 @@
 #include <Transaction.h>
 #include <Account.h>
 #include <gtest/gtest.h>
-#include <gtest/gmock.h>
+#include <gmock/gmock.h>
 
 using::testing::Return;
 using::testing::AtLeast;
