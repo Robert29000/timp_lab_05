@@ -29,12 +29,12 @@ TEST(Account, GetBalance){
 TEST(Account, ChangeBalance){
     MockAccount acc(0, 100);
     
+    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error);
+    acc.Lock();
     acc.ChangeBalance(50);
     
     EXPECT_EQ(acc.GetBalance(), 150);
     
-    acc.Lock();
-    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error);
 }
 
 TEST(Account, Lock){
