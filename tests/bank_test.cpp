@@ -42,7 +42,7 @@ TEST(Account, Lock){
     
     acc.Lock();
     
-    EXPECT_EQ(acc.is_locked_, true);
+    EXPECT_CALL(acc, Lock()).Times(1);
     
     EXPECT_THROW(acc.Lock(), std::runtime_error);
     
@@ -51,14 +51,12 @@ TEST(Account, Lock){
 TEST(Account, Unlock){
     MockAccount acc(0, 100);
     
-    acc.Unlock();
-    
-    EXPECT_EQ(acc.is_locked_, false);
+    EXPECT_CALL(acc, Unlock()).Times(1);
 }
 
 TEST(Transaction, SaveToDataBase){
     MockAccount f_acc(0, 200);
     MockAccount t_acc(1, 300);
-    MockTransaction tr();
+    MockTransaction tr;
     EXPECT_CALL(tr, SaveToDataBase(f_acc, t_acc, 150)).Times(AtLeast(1));
 }
