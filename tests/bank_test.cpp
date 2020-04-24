@@ -22,8 +22,8 @@ public:
 
 TEST(Account, GetBalance){
     MockAccount acc(0,100);
-    EXPECT_CALL(acc, GetBalance()).WillOnce(Return(50));
-    int x = acc.GetBalance();
+    EXPECT_CALL(acc, GetBalance()).WillOnce(Return(100));
+    EXPECT_EQ(acc.GetBalance(), 100);
 }
 
 TEST(Account, ChangeBalance){
