@@ -28,29 +28,27 @@ TEST(Account, GetBalance){
 
 TEST(Account, ChangeBalance){
     MockAccount acc(0, 100);
-    
-    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error);
     acc.ChangeBalance(50);
+    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error);
     acc.Lock();
+    acc.ChangeBalance(50)
     EXPECT_EQ(acc.GetBalance(), 150);
     
 }
 
 TEST(Account, Lock){
     MockAccount acc(0, 100);
-    
-    acc.Lock();
-    
     EXPECT_CALL(acc, Lock()).Times(1);
-    
+    acc.Lock();
+    acc.Lock();
     EXPECT_THROW(acc.Lock(), std::runtime_error);
     
 }
 
 TEST(Account, Unlock){
     MockAccount acc(0, 100);
-    
     EXPECT_CALL(acc, Unlock()).Times(1);
+    acc.Unlock();
 }
 
 TEST(Transaction, SaveToDataBase){
@@ -58,4 +56,5 @@ TEST(Transaction, SaveToDataBase){
     MockAccount t_acc(1, 300);
     MockTransaction tr;
     EXPECT_CALL(tr, SaveToDataBase(f_acc, t_acc, 150)).Times(1);
+    tr.SaveToDataBase(f_acc, t_acc, 150)
 }
