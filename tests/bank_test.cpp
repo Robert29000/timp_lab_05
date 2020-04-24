@@ -34,7 +34,7 @@ TEST(Account, ChangeBalance){
     EXPECT_EQ(acc.GetBalance(), 150);
     
     acc.Lock();
-    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error("at first lock the account"));
+    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error);
 }
 
 TEST(Account, Lock){
@@ -44,7 +44,7 @@ TEST(Account, Lock){
     
     EXPECT_EQ(acc.is_locked_, true);
     
-    EXPECT_THROW(acc.Lock(), std::runtime_error("already locked"));
+    EXPECT_THROW(acc.Lock(), std::runtime_error);
     
 }
 
@@ -59,5 +59,6 @@ TEST(Account, Unlock){
 TEST(Transaction, SaveToDataBase){
     MockAccount f_acc(0, 200);
     MockAccount t_acc(1, 300);
-    EXPECT_CALL(f_acc, SaveToDataBase(f_acc, t_acc, 150)).Times(AtLeast(1));
+    MockTransaction tr();
+    EXPECT_CALL(tr, SaveToDataBase(f_acc, t_acc, 150)).Times(AtLeast(1));
 }
