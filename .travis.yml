@@ -15,6 +15,7 @@ before_install:
 script:
   - cmake -H. -B_build -DBUILD_TESTS=ON
   - cmake --build _build
+  - cmake --build _build --target test -- ARGS=--verbose
   - cd _build
   - ./check --enable-gcov && make && make check
 after_success:
