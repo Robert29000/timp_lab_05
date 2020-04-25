@@ -5,10 +5,11 @@
 
 using::testing::Return;
 using::testing::AtLeast;
+using::testing::NiceMock;
 
 class MockAccount: public Account{
 public:
-    MockAccount(int id, int balance):Account(int id, int balance){}
+    MockAccount(int id, int balance):Account(id, balance){}
     MOCK_METHOD(int, GetBalance, (), (const, override));
     MOCK_METHOD(void, ChangeBalance, (int diff), (override));
     MOCK_METHOD(void, Lock, (), (override));
@@ -21,37 +22,34 @@ public:
 };
 
 TEST(Account, GetBalance){
-    MockAccount acc(0,100);
-    EXPECT_CALL(acc, GetBalance()).WillOnce(Return(100));
-    EXPECT_EQ(acc.GetBalance(), 100);
+    NiceMock<MockAccount> acc(1,100);
+    EXPECT_EQ(acc.Account::GetBalance(), 100);
 }
 
 TEST(Account, ChangeBalance){
-    MockAccount acc(0, 100);
-    EXPECT_THROW(acc.ChangeBalance(50), std::runtime_error);
-    acc.Lock();
-    acc.ChangeBalance(50);
-    EXPECT_EQ(acc.GetBalance(), 150);
+    NiceMock<MockAccount> acc(0, 100);
+    EXPECT_THROW(acc.Account::ChangeBalance(50), std::runtime_error);
+    acc.Account::Lock();
+    acc.Account::ChangeBalance(50);
+    EXPECT_EQ(acc.Account::GetBalance(), 150);
     
 }
 
 TEST(Account, Lock){
-    MockAccount acc(0, 100);
-    EXPECT_CALL(acc, Lock()).Times(3);
-    acc.Lock();
-    EXPECT_THROW(acc.Lock(), std::runtime_error);
-    
+    NiceMock<MockAccount> acc(0, 100);
+    acc.Account::Lock();
+    EXPECT_THROW(acc.Account::Lock(), std::runtime_error);
 }
 
 TEST(Account, Unlock){
-    MockAccount acc(0, 100);
+    NiceMock<MockAccount> acc(0, 100);
     EXPECT_CALL(acc, Unlock()).Times(1);
     acc.Unlock();
 }
 
 TEST(Transaction, SaveToDataBase){
-    MockAccount f_acc(0, 200);
-    MockAccount t_acc(1, 300);
+    NiceMock<MockAccount> f_acc(0, 200);
+    NiceMock<MockAccount> t_acc(1, 300);
     MockTransaction tr;
     EXPECT_CALL(tr, SaveToDataBase(f_acc, t_acc, 150)).Times(1);
     tr.SaveToDataBase(f_acc, t_acc, 150);
