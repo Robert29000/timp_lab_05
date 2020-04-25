@@ -17,4 +17,5 @@ script:
   - cmake --build _build
   - cmake --build _build --target test -- ARGS=--verbose
 after_success:
+  - cd _build
   - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
