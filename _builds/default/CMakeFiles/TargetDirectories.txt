@@ -1,0 +1,5 @@
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/default/CMakeFiles/rebuild_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/default/CMakeFiles/edit_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/default/banking/CMakeFiles/rebuild_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/default/banking/CMakeFiles/edit_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/default/banking/CMakeFiles/banking.dir

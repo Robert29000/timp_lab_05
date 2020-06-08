@@ -1,0 +1,5 @@
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14/CMakeFiles/rebuild_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14/CMakeFiles/edit_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14/banking/CMakeFiles/rebuild_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14/banking/CMakeFiles/edit_cache.dir
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14/banking/CMakeFiles/banking.dir

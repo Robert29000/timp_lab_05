@@ -1,0 +1,1 @@
+"cmake" "-H." "-B/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/default" "-DCMAKE_TOOLCHAIN_FILE=/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/tools/polly/default.cmake"

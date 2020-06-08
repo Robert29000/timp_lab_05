@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Account.cpp
+Account.h
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Account.h
+stdexcept
+-
+
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Account.h
+
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Transaction.cpp
+Transaction.h
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Transaction.h
+cassert
+-
+iostream
+-
+stdexcept
+-
+Account.h
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Account.h
+
+/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/banking/Transaction.h
+

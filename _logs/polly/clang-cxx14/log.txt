@@ -1,0 +1,62 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master]> "which" "cmake"
+/usr/local/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master]> "cmake" "--version"
+cmake version 3.17.0
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `-H.`
+  `-B/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14`
+  `-GUnix Makefiles`
+  `-DCMAKE_TOOLCHAIN_FILE=/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/tools/polly/clang-cxx14.cmake`
+]
+[/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master]> "cmake" "-H." "-B/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14" "-GUnix Makefiles" "-DCMAKE_TOOLCHAIN_FILE=/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/tools/polly/clang-cxx14.cmake"
+-- [polly] Used toolchain: clang / c++14 support
+-- The C compiler identification is AppleClang 11.0.0.11000033
+-- The CXX compiler identification is AppleClang 11.0.0.11000033
+-- Check for working C compiler: /usr/bin/clang
+-- Check for working C compiler: /usr/bin/clang - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/clang++
+-- Check for working CXX compiler: /usr/bin/clang++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- [hunter] Calculating Toolchain-SHA1
+-- [hunter] Calculating Config-SHA1
+-- [hunter] HUNTER_ROOT: /Users/melikyan/.hunter
+-- [hunter] [ Hunter-ID: 5659b15 | Toolchain-ID: 751c1db | Config-ID: 65a58ee ]
+-- [hunter] GTEST_ROOT: /Users/melikyan/.hunter/_Base/5659b15/751c1db/65a58ee/Install (ver.: 1.10.0)
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14
+Execute command: [
+  `cmake`
+  `--build`
+  `/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14`
+  `--`
+]
+[/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master]> "cmake" "--build" "/Users/melikyan/Desktop/Университет/2 семестр/ТИМП/lab05-master/_builds/clang-cxx14" "--"
+Scanning dependencies of target banking
+[ 33%] Building CXX object banking/CMakeFiles/banking.dir/Account.cpp.o
+[ 66%] Building CXX object banking/CMakeFiles/banking.dir/Transaction.cpp.o
+[100%] Linking CXX static library libbanking.a
+[100%] Built target banking
